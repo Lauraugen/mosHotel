@@ -9,12 +9,11 @@ class Client(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100), nullable=False)
     surname1 = db.Column(db.String(100), nullable=False)
-    surname2 = db.Column(db.String(100), nullable=False)
+    surname2 = db.Column(db.String(100), nullable=True)
     dni = db.Column(db.String(100), unique=True, nullable=False)
     email = db.Column(db.String(100), nullable=False)
     birthday = db.Column(db.DateTime, nullable=True)
     password = db.Column(db.String(100), nullable=False)
-    rol = db.Column(db.String(100), nullable=False)
 
     def __repr__(self):
         return self.name
@@ -56,4 +55,3 @@ class ClientSchema(Schema):
     email = fields.String()
     birthday = fields.DateTime()
     password = fields.String()
-    rol = fields.String()

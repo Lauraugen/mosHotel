@@ -65,3 +65,4 @@ class BookingSchema(Schema):
     parking = fields.Boolean()
     breakfast = fields.Boolean()
     id_client = fields.Integer()
+    

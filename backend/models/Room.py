@@ -8,7 +8,6 @@ class Room(db.Model):
     __tablename__ = "room"
     id = db.Column(db.Integer, primary_key=True)
     camas = db.Column(db.Integer, nullable=False)
-    vistas = db.Column(db.String(100), nullable=False)
     piso = db.Column(db.Integer, nullable=False)
     free = db.Column(db.Boolean, nullable=False)
     fotos = db.Column(db.String(100), nullable=True)
@@ -38,7 +37,6 @@ class Room(db.Model):
         return {
             "id": self.id,
             "camas": self.camas,
-            'vistas': self.vistas,
             'piso': self.piso,
             "free": self.free,
             "fotos": self.fotos,
@@ -50,7 +48,6 @@ class Room(db.Model):
 class RoomSchema(Schema):
     id = fields.Integer()
     camas = fields.Integer()
-    vistas = fields.String()
     piso = fields.Integer()
     free = fields.Boolean()
     fotos = fields.String()

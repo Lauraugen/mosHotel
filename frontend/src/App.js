@@ -6,6 +6,7 @@ import Service from "./routes/Service";
 import Contact from "./routes/Contact";
 
 import { Route, Routes } from "react-router-dom";
+import Login from "./components/Login";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/service" element={<Service />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/login" element={<Login />} />
 
         {/* <Navbar />
       <Home />
