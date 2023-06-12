@@ -14,6 +14,7 @@ class Client(db.Model):
     email = db.Column(db.String(100), nullable=False)
     birthday = db.Column(db.DateTime, nullable=True)
     password = db.Column(db.String(100), nullable=False)
+    rol = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
         return self.name
@@ -24,7 +25,11 @@ class Client(db.Model):
 
     @classmethod
     def get_by_id(cls,id):
-        return cls.query.get_or_404(id)
+        return cls.query.filter_by(id=id).first_or_404()
+
+    @classmethod
+    def get_by_email_password(cls, email, password):
+        return cls.query.filter_by(email=email,password=password).first_or_404()
 
     def save(self):
         db.session.add(self)
@@ -42,7 +47,8 @@ class Client(db.Model):
             'surname2': self.surname2,
             "dni": self.dni,
             "email": self.email,
-            "birthday": self.birthday
+            "birthday": self.birthday,
+            "rol": self.rol
         }
 
 
@@ -55,3 +61,4 @@ class ClientSchema(Schema):
     email = fields.String()
     birthday = fields.DateTime()
     password = fields.String()
+    rol = fields.Integer()

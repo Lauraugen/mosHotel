@@ -13,6 +13,7 @@ class Room(db.Model):
     fotos = db.Column(db.String(100), nullable=True)
     tipo = db.Column(db.String(100), nullable=False)
     num_room = db.Column(db.Integer, nullable=False)
+    precio = db.Column(db.Float, nullable=False)
 
     def __repr__(self):
         return self.user

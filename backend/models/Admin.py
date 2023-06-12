@@ -8,12 +8,12 @@ db = SQLAlchemy(app)
 class Admin(db.Model):
     __tablename__ = "admin"
     id = db.Column(db.Integer, primary_key=True)
-    user = db.Column(db.String(100), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
     password = db.Column(db.String(100), nullable=False)
     rol = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
-        return self.user
+        return self.email
 
     @classmethod
     def get_all(cls):
@@ -34,7 +34,7 @@ class Admin(db.Model):
     def toJSON(self):
         return {
             "id": self.id,
-            "user": self.user,
+            "email": self.email,
             'password': self.password,
             'rol': self.rol
         }
@@ -42,6 +42,6 @@ class Admin(db.Model):
 
 class AdminSchema(Schema):
     id = fields.Integer()
-    user = fields.String()
+    email = fields.String()
     password = fields.String()
     rol = fields.Integer()
