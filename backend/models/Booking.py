@@ -26,8 +26,8 @@ class Booking (db.Model):
         return cls.query.all()
 
     @classmethod
-    def get_by_id(cls,id):
-        return cls.query.get_or_404(id)
+    def get_by_id(cls, id):
+        return cls.query.filter_by(id=id).first_or_404()
 
     def save(self):
         db.session.add(self)

@@ -26,6 +26,7 @@ def get_all_client():
         print(err)
 
 @client.get("/api/client/<id>")
+@jwt_required()
 def get_client(id):
     try:
         user = Client.get_by_id(id)
@@ -38,34 +39,61 @@ def get_client(id):
 
 
 @client.post("/api/client/post")
+@jwt_required()
 def add_client():
     try:
-        clients = Client.get_all()
-        serializer = ClientSchema(many=True)
-        data = serializer.dump(clients)
-        return jsonify(data)
+        if not request.json:
+            return jsonify({'message': 'Response not found'}), 400
+        client = Client(
+            name=request.json.get('name'),
+            surname1=request.json.get('surname1'),
+            surname2=request.json.get('surname2'),
+            dni=request.json.get('dni'),
+            email=request.json.get('email'),
+            birthday=request.json.get('birthday'),
+            password=request.json.get('password'),
+            rol=3,
+        )
+        client.save()
+        return jsonify(client.toJSON()), 201
     except Exception as err:
         print(err)
 
 
-@client.put("/api/client/update")
-def update_client():
+@client.put("/api/client/update/<id>")
+@jwt_required()
+def update_client(id):
     try:
-        clients = Client.get_all()
-        serializer = ClientSchema(many=True)
-        data = serializer.dump(clients)
-        return jsonify(data)
+        if not request.json:
+            return jsonify({'message': 'Response not found'}), 400
+        client = Client.get_by_id(id)
+        if client is None:
+            return jsonify(({'message': 'No existe cliente para actualizar'}), 404)
+
+        client.name = request.json.get('name', client.name)
+        client.surname1 = request.json.get('surname1', client.surname1)
+        client.surname2 = request.json.get('surname2', client.surname2)
+        client.dni = request.json.get('dni', client.dni)
+        client.email = request.json.get('email', client.email)
+        client.birthday = request.json.get('birthday', client.birthday)
+        client.password = request.json.get('password', client.password)
+
+        client.save()
+        return jsonify(client.toJSON()),  201
     except Exception as err:
         print(err)
 
 
 @client.delete("/api/client/delete/<id>")
+@jwt_required()
 def delete_client(id):
     try:
-        clients = Client.delete(id)
-        serializer = ClientSchema(many=True)
-        data = serializer.dump(clients)
-        return jsonify(data)
+        client = Client.get_by_id(id)
+        print(client)
+        if client is None:
+            return jsonify(({'message': 'No existe cliente a eliminar'}), 404)
+        client.delete()
+        return jsonify({'result': True})
     except Exception as err:
         print(err)
 
@@ -92,11 +120,6 @@ def login():
         response = {"msg": "Wrong email or password"}, 401
 
     return response
-
-
-@client.post("/api/client/register")
-def register():
-    return "register"
 
 
 @client.post("/api/client/logout")

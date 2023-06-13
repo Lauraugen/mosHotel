@@ -21,7 +21,11 @@ class Admin(db.Model):
 
     @classmethod
     def get_by_id(cls, id):
-        return cls.query.get_or_404(id)
+        return cls.query.filter_by(id=id).first_or_404()
+
+    @classmethod
+    def get_by_email_password(cls, email, password):
+        return cls.query.filter_by(email=email, password=password).first_or_404()
 
     def save(self):
         db.session.add(self)
