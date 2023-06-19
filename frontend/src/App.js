@@ -3,7 +3,7 @@ import { useState } from 'react';
 import "./styles.css";
 import Home from "./routes/Home";
 import About from "./routes/About";
-import Travel from "./routes/About";
+import Travel from "./routes/Travel";
 import Contact from "./routes/Contact";
 import HomeClient from "./routes/Client/Home";
 import AboutClient from "./routes/Client/About";
@@ -17,7 +17,7 @@ import { useLocalState } from './components/utils/useLocalStorage';
 import { Route, Routes } from "react-router-dom";
 import LoginGeneral from "./routes/LoginGeneral";
 import BookingClient from "./routes/Client/Booking";
-import BookingClientAdd from "./components/Booking/BookingClientAdd";
+import BookingClientAdd from "./routes/Client/BookingAdd";
 
 
 function App() {

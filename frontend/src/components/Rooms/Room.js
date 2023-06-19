@@ -1,52 +1,49 @@
 import "./ServiceStyles.css";
 import HotelData from "./ServiceData";
-import Buffet from "../../assets/servicesHotel/buffet.jpg";
-import Aparcamiento from "../../assets/servicesHotel/aparcamiento.jpeg";
-import Spa from "../../assets/servicesHotel/spa.jpg";
-import Lavanderia from "../../assets/servicesHotel/lavanderia.jpg";
-import Piscina from "../../assets/servicesHotel/piscina.jpg";
-import Gym from "../../assets/servicesHotel/gym.jpg";
-import MeetingRoom from "../../assets/servicesHotel/meeting.jpg";
+import Capsula from "../../assets/rooms/capsula.jpg";
+import Doble from "../../assets/rooms/doble.jpg";
+import Individual from "../../assets/rooms/individual.jpg";
+import Matrimonio from "../../assets/rooms/matrimonio.jpg";
+import Litera from "../../assets/rooms/literas.jpg";
+import Ryokan from "../../assets/rooms/ryokan.jpg";
 
-function Service() {
+
+
+function RoomType() {
   return (
     
     <div className="trip">
       <h1>Tipos de Habitaciones disponibles</h1>
       <div className="tripcard">
         <HotelData
-          image={Aparcamiento}
-          heading="Aparcamiento"
+          image={Capsula}
+          heading="Capsula"
           
         />
         <HotelData
-          image={Buffet}
-          heading="Buffet"
+          image={Individual}
+          heading="Individual"
         />
         <HotelData
-          image={Spa}
-          heading="Spa"
+          image={Matrimonio}
+          heading="Matrimonio"
         />
          <HotelData
-          image={Gym}
-          heading="Gym"
+          image={Litera}
+          heading="Litera"
         />
         <HotelData
-          image={MeetingRoom}
-          heading="Sala de reuniones"
+          image={Doble}
+          heading="Doble"
         />
         <HotelData
-          image={Piscina}
-          heading="Piscina climatizada"
+          image={Ryokan}
+          heading="Ryokan"
         />
-        <HotelData
-          image={Lavanderia}
-          heading="Servicio lavanderia"
-  
-        />
+
       </div>
     </div>
   );
 }
 
-export default Service;
+export default RoomType;

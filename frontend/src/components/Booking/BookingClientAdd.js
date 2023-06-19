@@ -5,12 +5,15 @@ import jwtDecode from 'jwt-decode';
 
 
 const BookingClientAdd = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [checkin, setCheckin] = useState("");
+  const [checkout, setCheckout] = useState("");
+  const [id_room, setIdRoom] = useState("");
+  const [spa, setSpa] = useState("");
+  const [dinner, setDinner] = useState("");
   const [jwt, setJwt] = useLocalState("", "jwt");
   const [rol,setRol] =useLocalState("", "rol");
 
-  function RegisterBooking() {
+  function AddBooking() {
     
       const payload = {
         checkout: checkout,
@@ -49,9 +52,18 @@ const BookingClientAdd = () => {
     <>
       <div className="form-container">
         <form>
-          <input placeholder="Email" onChange={(e) => setEmail(e.target.value)}/>
-          <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} />
-          <button onClick={() => Login()}>Iniciar Sesion</button>
+        <label>Checkin</label>
+          <input placeholder="Checkin" type="date" onChange={(e) => setCheckin(e.target.value)}/>
+          <label>Checkin</label>
+          <input placeholder="Checkout" type="date" onChange={(e) => setCheckout(e.target.value)} />
+          <input placeholder="Id_room" type="number" onChange={(e) => setIdRoom(e.target.value)} />
+          <label>Spa</label>
+          <input placeholder="Spa" type="checkbox" onChange={(e) => setSpa(e.target.value)} />
+          <label>Dinner</label>
+          <input placeholder="Dinner" type="checkbox" onChange={(e) => setDinner(e.target.value)} />
+          <label>Gym</label>
+          <input placeholder="Gym" type="checkbox" onChange={(e) => setGym(e.target.value)} />
+          <button onClick={() => AddBooking()}>Reservar</button>
         </form>
       </div>
     </>

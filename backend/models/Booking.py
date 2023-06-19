@@ -19,6 +19,7 @@ class Booking(db.Model):
     breakfast = db.Column(db.Boolean, nullable=False)
     id_client = db.Column(db.Integer, db.ForeignKey('client.id'), nullable=False)
 
+
     def __repr__(self):
         return str(self.checkin)
 

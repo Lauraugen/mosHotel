@@ -14,7 +14,7 @@ function Home() {
         title="Tu viaje tu Historia"
         btnClass="show"
         buttonText="Reserva Ya"
-        url="/"
+        url="/login"
       />
       <Service />
       <Footer />

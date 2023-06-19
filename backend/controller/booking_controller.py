@@ -103,7 +103,6 @@ def update_room(id):
 
 
 @booking.delete("/api/booking/delete/<id>")
-@jwt_required()
 def delete_room(id):
     try:
         booking = Booking.get_by_id(id)

@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="top">
           <div>
             <h1>Mos<i className="fa-solid fa-hotel"></i>otel</h1>
-            <p>.</p>
+            <p>Hotel | Kioto, Prefectura de Kioto, Japón</p>
           </div>
           <div>
             <a href="https://facebook.com/">
@@ -24,9 +24,10 @@ const Footer = () => {
 
         <div className="bottom">
           <div>
-            <h4>Project</h4>
-            <a href="https://fontawesome.com/">DAW</a>
-            <a href="https://fontawesome.com/">Laura Alvarez</a>
+            <h4>© 2023 MOS Hotel Group</h4>
+            <a href="/">Terms of Use</a>
+            <a href="/">Privacy Statement© 2023 Park Hotel Group</a>
+
           </div>
          
           <div>

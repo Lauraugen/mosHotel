@@ -5,10 +5,19 @@ function AboutUs() {
     <div className="about-container">
       <h1>Sobre Nosotros</h1>
       <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Disponemos de una amplia variedad de habitaciones y servicios, asi como tener siempre en cuenta la opinion del cliente.
+      </p>
+      <p>
+      Nuestro Hotel esta ubicado cerca de la estacion de tren de Kyoto y a 15 minutos del centro
+      </p>
+      <p>
+      Hay muchas razones para visitar el encantador Kyoto y muchos tesoros para descubrir cuando se hospede con nosotros en el Mos Hotel Kyoto.
+      </p>
+      <p>
+      Ubicado en el corazón de la ciudad, a solo minutos de lugares declarados Patrimonio de la Humanidad por la UNESCO, como el castillo de Nijō, y a solo tres minutos a pie de la estación de tren más cercana, hacemos que explorar la ciudad sea conveniente para usted.
       </p>
 
-      <h1>Our Mission</h1>
+      <h1>Nuestra Mision</h1>
       <p>
         Facilitar la reserva de excursiones y habitaciones haya donde vayas.
       </p>

@@ -11,7 +11,7 @@ function AboutClient() {
       <HomeHero
         cName="hero-mid"
         heroImg={AboutImg}
-        title="About"
+        title="Informacion"
         btnClass="hide"
       />
       <AboutUs />

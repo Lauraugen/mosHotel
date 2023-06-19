@@ -1,6 +1,6 @@
 import DefaultNavbar from "../components/Navbar/DefaultNavbar";
 import HomeHero from "../components/Home/HomeHero";
-import AboutImg from "../assets/night.jpg";
+import TravelImg from "../assets/travels/travel.jpg";
 import Footer from "../components/Footer/Footer";
 import Destination from "src/components/Destinations/Destination";
 
@@ -10,7 +10,7 @@ function Travel() {
       <DefaultNavbar />
       <HomeHero
         cName="hero-mid"
-        heroImg={AboutImg}
+        heroImg={TravelImg}
         title="Viajes"
         btnClass="hide"
       />

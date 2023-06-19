@@ -32,11 +32,20 @@ const BookingClient = () => {
         });
     }, []);
 
-    const update = (booking) => {
+    const update = (element) => {
         setElement(booking)
         window.location.href = '/bookingClientUpdate'
 
     }
+    const deleteBooking = (element) => {
+      fetch(`/api/booking/delete/${element.id}`,{
+        headers: {
+            "Content-Type": "application/json",
+        },
+        method: "delete",
+    }).then(res => {if(res.status === 200) navigate("/dashboard")})
+
+  }
 
 if(booking){
   
@@ -62,7 +71,7 @@ if(booking){
             </tr>
             {booking.map((element, index) => (
               <tr key={index}>
-                <td onClick={() => update(element)}>{element.checkin}</td>
+                <td onClick={() => alert("Update Reserva")}>{element.checkin}</td>
                 <td>{element.checkout}</td>
                 <td>{element.spa.toString()}</td>
                 <td>{element.dinner.toString()}</td>
@@ -70,7 +79,7 @@ if(booking){
                 <td>{element.lunch.toString()}</td>
                 <td>{element.parking.toString()}</td>
                 <td>{element.breakfast.toString()}</td>
-                <td onClick={() => delete(element)}><strong>Cancelar</strong></td>
+                <td onClick={() => alert("Eliminar Reserva")}><strong>Cancelar</strong></td>
               
               </tr>
             ))}

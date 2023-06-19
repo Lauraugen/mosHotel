@@ -1,7 +1,7 @@
 import ClientNavbar from "../../components/Navbar/ClientNavbar";
 import HomeHero from "../../components/Home/HomeHero";
 import Footer from "../../components/Footer/Footer";
-import AboutImg from "../../assets/night.jpg";
+import TravelImg from "../../assets/travels/travel.jpg";
 import Destination from "../../components/Destinations/Destination";
 
 function TravelClient() {
@@ -10,7 +10,7 @@ function TravelClient() {
       <ClientNavbar />
       <HomeHero
         cName="hero-mid"
-        heroImg={AboutImg}
+        heroImg={TravelImg}
         title="Viajes"
         btnClass="hide"
       />
