@@ -111,7 +111,8 @@ def login():
         claims = {
             "email": cliente.email,
             "rol": cliente.rol,
-            "id": cliente.id
+            "id": cliente.id,
+            "name": cliente.name,
         }
         access_token = create_access_token(identity=cliente.id,additional_claims=claims)
         response = {"access_token": access_token}

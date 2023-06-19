@@ -53,8 +53,6 @@ def add_employee():
             email=request.json.get('email'),
             birthday=request.json.get('birthday'),
             password=request.json.get('password'),
-            free=request.json.get('free'),
-            photo=request.json.get('photo'),
             rol=2,
         )
         employee.save()
@@ -80,8 +78,6 @@ def update_employee(id):
         employee.email = request.json.get('email', employee.email)
         employee.birthday = request.json.get('birthday', employee.birthday)
         employee.password = request.json.get('password', employee.password)
-        employee.free = request.json.get('free', employee.free)
-        employee.photo = request.json.get('photo', employee.photo)
 
         employee.save()
         return jsonify(employee.toJSON()),  201
@@ -115,7 +111,8 @@ def login():
         claims = {
             "email": employee.email,
             "rol": employee.rol,
-            "id": employee.id
+            "id": employee.id,
+            "name": employee.name
         }
         access_token = create_access_token(identity=employee.id, additional_claims=claims)
         response = {"access_token": access_token}

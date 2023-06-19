@@ -1,10 +1,11 @@
 from flask_sqlalchemy import SQLAlchemy
-from marshmallow import Schema,fields
+from marshmallow import Schema, fields
 from config import app
 
 db = SQLAlchemy(app)
 
-class Booking (db.Model):
+
+class Booking(db.Model):
     __tablename__ = "booking"
     id = db.Column(db.Integer, primary_key=True)
     checkout = db.Column(db.DateTime, nullable=False)
@@ -19,7 +20,7 @@ class Booking (db.Model):
     id_client = db.Column(db.Integer, db.ForeignKey('client.id'), nullable=False)
 
     def __repr__(self):
-        return self.checkin
+        return str(self.checkin)
 
     @classmethod
     def get_all(cls):
@@ -29,9 +30,16 @@ class Booking (db.Model):
     def get_by_id(cls, id):
         return cls.query.filter_by(id=id).first_or_404()
 
+    @classmethod
+    def get_by_id_client(cls, id):
+        #resultado = db.session.query('SELECT * FROM booking WHERE id_client = :id', {'id': id}).all()
+        #return resultado
+        return cls.query.filter_by(id_client=id).all()
+
     def save(self):
         db.session.add(self)
         db.session.commit()
+
 
     def delete(self):
         db.session.delete(self)

@@ -4,7 +4,9 @@
   "description": "",
   "keywords": [],
   "main": "src/index.js",
+  "proxy": "http://127.0.0.1:5000",
   "dependencies": {
+    "jwt-decode": "^3.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "4.3.1",

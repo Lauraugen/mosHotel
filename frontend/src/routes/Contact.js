@@ -1,17 +1,17 @@
-import Navbar from "../components/Navbar";
-import HomeHero from "../components/HomeHero";
-import AboutImg from "../assets/2.jpg";
-import ContactForm from "../components/ContactForm";
-import Footer from "../components/Footer";
+import DefaultNavbar from "../components/Navbar/DefaultNavbar";
+import HomeHero from "../components/Home/HomeHero";
+import ContactImg from "../assets/recepcion.jpeg";
+import ContactForm from "../components/ContactForm/ContactForm";
+import Footer from "../components/Footer/Footer";
 
 function Contact() {
   return (
     <>
-      <Navbar />
+      <DefaultNavbar />
       <HomeHero
         cName="hero-mid"
-        heroImg={AboutImg}
-        title="Contact"
+        heroImg={ContactImg}
+        title="Contacto"
         btnClass="hide"
       />
       <ContactForm />

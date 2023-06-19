@@ -17,8 +17,6 @@ class Employee(db.Model):
     birthday = db.Column(db.DateTime, nullable=True)
     password = db.Column(db.String(100), nullable=False)
     rol = db.Column(db.Integer, nullable=False)
-    free = db.Column(db.Boolean, nullable=False)
-    photo = db.Column(db.String(100), nullable=True)
 
     def __repr__(self):
         return self.name
@@ -53,8 +51,6 @@ class Employee(db.Model):
             "email": self.email,
             "birthday": self.birthday,
             "rol": self.rol,
-            "free": self.free,
-            "photo": self.photo
         }
 
 
@@ -68,5 +64,4 @@ class EmployeeSchema(Schema):
     birthday = fields.DateTime()
     password = fields.String()
     rol = fields.Integer()
-    free = fields.Boolean()
-    photo = fields.String()
+

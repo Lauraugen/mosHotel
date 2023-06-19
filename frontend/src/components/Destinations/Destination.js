@@ -1,8 +1,8 @@
 import React from "react";
-import Mountain1 from "../assets/1.jpg";
-import Mountain2 from "../assets/2.jpg";
-import Mountain3 from "../assets/5.jpg";
-import Mountain4 from "../assets/8.jpg";
+import Mountain1 from "../../assets/1.jpg";
+import Mountain2 from "../../assets/2.jpg";
+import Mountain3 from "../../assets/5.jpg";
+import Mountain4 from "../../assets/8.jpg";
 import DestinationData from "./DestinationData";
 
 const Destination = () => {
@@ -13,7 +13,7 @@ const Destination = () => {
         <p>.</p>
         <DestinationData
           className="first-des"
-          heading="Taal Volcano, Batangas"
+          heading="Bosque de Bambu en Arashiyama"
           text="One of the most iconic views in Luzon, Mt. Taal boasts a volcano
             inside a lake inside an island. If you fancy a closer look, the hike
             up to the crater is a mere 45 minutes, and is easy enough for

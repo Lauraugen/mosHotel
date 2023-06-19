@@ -1,10 +1,10 @@
-import "./TripStyles.css";
+import "./ServiceStyles.css";
 
-function TripData(props) {
+function HotelData(props) {
   return (
     <div className="t-card">
       <div className="t-image">
-        <img src={props.image} alt="trip" />
+        <img src={props.image} alt="serviceHotel" />
       </div>
       <h4>{props.heading}</h4>
       <p>{props.text}</p>
@@ -12,4 +12,4 @@ function TripData(props) {
   );
 }
 
-export default TripData;
+export default HotelData;

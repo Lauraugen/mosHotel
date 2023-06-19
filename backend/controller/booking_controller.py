@@ -15,7 +15,6 @@ def add_headers(response):
 
 # API CLIENT
 @booking.get("/api/booking/all")
-@jwt_required()
 def get_all_booking():
     try:
         clients = Booking.get_all()
@@ -24,6 +23,19 @@ def get_all_booking():
         return jsonify(data)
     except Exception as err:
         print(err)
+
+
+@booking.get("/api/booking/all/<id>")
+def get_all_booking_client(id):
+    try:
+        booking = Booking.get_by_id_client(id)
+        print(booking)
+        serializer = BookingSchema(many=True)
+        data = serializer.dump(booking)
+        return jsonify(data)
+    except Exception as ex:
+        return jsonify({'message': str(ex)}), 500
+
 
 @booking.get("/api/booking/<id>")
 @jwt_required()

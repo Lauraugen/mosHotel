@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="footer">
         <div className="top">
           <div>
-            <h1>MoshManagement</h1>
+            <h1>Mos<i className="fa-solid fa-hotel"></i>otel</h1>
             <p>.</p>
           </div>
           <div>

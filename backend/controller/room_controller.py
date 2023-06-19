@@ -47,8 +47,6 @@ def add_room():
         room = Room(
             camas=request.json.get('camas'),
             piso=request.json.get('piso'),
-            free=request.json.get('free'),
-            fotos=request.json.get('fotos'),
             tipo=request.json.get('tipo'),
             num_room=request.json.get('num_room'),
             precio=request.json.get('precio')
@@ -71,8 +69,6 @@ def update_room(id):
 
         room.camas = request.json.get('camas', room.camas)
         room.piso = request.json.get('piso', room.piso)
-        room.free = request.json.get('free', room.free)
-        room.fotos = request.json.get('fotos', room.fotos)
         room.tipo = request.json.get('tipo', room.tipo)
         room.num_room = request.json.get('num_room', room.num_room)
         room.precio = request.json.get('precio', room.precio)
